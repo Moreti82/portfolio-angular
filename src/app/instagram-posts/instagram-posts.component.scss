@@ -1,0 +1,772 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  padding: 40px;
+  background: #1a1a1a;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.guide {
+  color: #666;
+  font-size: 13px;
+  text-align: center;
+  background: #222;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 12px 24px;
+  max-width: 600px;
+}
+
+.guide strong { color: #0A84FF; }
+
+/* ── CADA POST É 1080×1080px ── */
+.post {
+  width: 1080px;
+  height: 1080px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid #222;
+}
+
+.post-label {
+  color: #555;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+/* ─────────────────────────────
+   POST 1 — APRESENTAÇÃO
+───────────────────────────── */
+.post-1 {
+  background: #050505;
+}
+
+.p1-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(10,132,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10,132,255,0.06) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.p1-glow-top {
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 600px;
+  background: radial-gradient(ellipse, rgba(10,132,255,0.22) 0%, transparent 65%);
+}
+
+.p1-glow-bot {
+  position: absolute;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(10,132,255,0.12) 0%, transparent 65%);
+}
+
+.p1-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
+  text-align: center;
+}
+
+.p1-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 56px;
+}
+
+.p1-icon {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, #0A84FF, #0040aa);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 2.2rem;
+  color: white;
+  box-shadow: 0 0 40px rgba(10,132,255,0.5);
+}
+
+.p1-logo-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: white;
+}
+
+.p1-logo-text .blue { color: #0A84FF; }
+
+.p1-divider {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #0A84FF, transparent);
+  margin-bottom: 44px;
+}
+
+.p1-headline {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.8rem;
+  font-weight: 900;
+  line-height: 1.1;
+  color: white;
+  margin-bottom: 28px;
+  letter-spacing: -1px;
+}
+
+.p1-headline .blue-grad {
+  background: linear-gradient(135deg, #0A84FF, #66c2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.p1-sub {
+  font-size: 1.3rem;
+  color: #6a8aaa;
+  margin-bottom: 56px;
+  letter-spacing: 1px;
+}
+
+.p1-services {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.p1-svc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 24px;
+  background: rgba(10,132,255,0.08);
+  border: 1px solid rgba(10,132,255,0.25);
+  border-radius: 16px;
+  color: white;
+  min-width: 110px;
+}
+
+.p1-svc i {
+  font-size: 1.5rem;
+  color: #0A84FF;
+}
+
+.p1-svc span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #94a8be;
+}
+
+.p1-handle {
+  font-size: 1rem;
+  color: #0A84FF;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+/* ─────────────────────────────
+   POST 2 — SITE PROFISSIONAL
+───────────────────────────── */
+.post-2 {
+  background: linear-gradient(145deg, #050505 0%, #0B1F3A 100%);
+}
+
+.p2-border {
+  position: absolute;
+  inset: 24px;
+  border: 1px solid rgba(10,132,255,0.2);
+  border-radius: 24px;
+  pointer-events: none;
+}
+
+.p2-corner {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-color: #0A84FF;
+  border-style: solid;
+}
+
+.p2-corner.tl { top: 24px; left: 24px; border-width: 3px 0 0 3px; border-radius: 24px 0 0 0; }
+.p2-corner.tr { top: 24px; right: 24px; border-width: 3px 3px 0 0; border-radius: 0 24px 0 0; }
+.p2-corner.bl { bottom: 24px; left: 24px; border-width: 0 0 3px 3px; border-radius: 0 0 0 24px; }
+.p2-corner.br { bottom: 24px; right: 24px; border-width: 0 3px 3px 0; border-radius: 0 0 24px 0; }
+
+.p2-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 90px;
+}
+
+.p2-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: rgba(10,132,255,0.12);
+  border: 1px solid rgba(10,132,255,0.4);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #0A84FF;
+  margin-bottom: 44px;
+  width: fit-content;
+}
+
+.p2-tag-dot {
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+}
+
+.p2-headline {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.6rem;
+  font-weight: 900;
+  line-height: 1.1;
+  color: white;
+  margin-bottom: 36px;
+  letter-spacing: -1px;
+}
+
+.p2-headline span {
+  background: linear-gradient(135deg, #0A84FF, #66c2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.p2-desc {
+  font-size: 1.25rem;
+  color: #94a8be;
+  line-height: 1.65;
+  margin-bottom: 52px;
+  max-width: 520px;
+}
+
+.p2-checks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 64px;
+  padding: 0;
+}
+
+.p2-checks li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.15rem;
+  color: #d0dde8;
+  font-weight: 500;
+}
+
+.p2-checks li .check-icon {
+  width: 32px;
+  height: 32px;
+  background: rgba(10,132,255,0.15);
+  border: 1px solid rgba(10,132,255,0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0A84FF;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.p2-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.p2-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 44px;
+  background: #0A84FF;
+  border-radius: 14px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 0 40px rgba(10,132,255,0.4);
+}
+
+.p2-handle {
+  font-size: 1rem;
+  color: #4a6a8a;
+  font-weight: 600;
+}
+
+/* ─────────────────────────────
+   POST 3 — SISTEMAS / SAAS
+───────────────────────────── */
+.post-3 {
+  background: #050505;
+}
+
+.p3-accent-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #0A84FF, #0040aa, #0A84FF);
+}
+
+.p3-glow {
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(10,132,255,0.14) 0%, transparent 60%);
+}
+
+.p3-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
+  text-align: center;
+}
+
+.p3-number-row {
+  display: flex;
+  gap: 48px;
+  margin-bottom: 64px;
+}
+
+.p3-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.p3-stat-num {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #0A84FF;
+  line-height: 1;
+}
+
+.p3-stat-label {
+  font-size: 0.9rem;
+  color: #4a6a8a;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.p3-divider-v {
+  width: 1px;
+  height: 80px;
+  background: rgba(10,132,255,0.2);
+  align-self: center;
+}
+
+.p3-headline {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: white;
+  line-height: 1.15;
+  margin-bottom: 28px;
+  letter-spacing: -0.5px;
+}
+
+.p3-headline span {
+  background: linear-gradient(135deg, #0A84FF, #66c2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.p3-desc {
+  font-size: 1.2rem;
+  color: #6a8aaa;
+  line-height: 1.65;
+  max-width: 680px;
+  margin-bottom: 60px;
+}
+
+.p3-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.p3-tag {
+  padding: 10px 22px;
+  background: rgba(10,132,255,0.08);
+  border: 1px solid rgba(10,132,255,0.22);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #94a8be;
+  font-weight: 500;
+}
+
+.p3-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.p3-logo-sm {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.p3-icon-sm {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #0A84FF, #0040aa);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.p3-logo-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  color: white;
+  font-weight: 700;
+}
+
+.p3-logo-name .blue { color: #0A84FF; }
+
+.p3-sep { color: #333; }
+
+.p3-handle {
+  font-size: 0.9rem;
+  color: #0A84FF;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* ─────────────────────────────
+   POST 4 — CTA / ORÇAMENTO
+───────────────────────────── */
+.post-4 {
+  background: linear-gradient(135deg, #050505 0%, #0B1F3A 60%, #050505 100%);
+}
+
+.p4-glow-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(10,132,255,0.18) 0%, transparent 60%);
+}
+
+.p4-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(10,132,255,0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.p4-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
+  text-align: center;
+}
+
+.p4-eyebrow {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #0A84FF;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.p4-headline {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4rem;
+  font-weight: 900;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+
+.p4-headline span {
+  background: linear-gradient(135deg, #0A84FF, #66c2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.p4-sub {
+  font-size: 1.3rem;
+  color: #6a8aaa;
+  margin-bottom: 64px;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.p4-wa-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 44px 60px;
+  background: rgba(10,132,255,0.08);
+  border: 2px solid rgba(10,132,255,0.35);
+  border-radius: 24px;
+  margin-bottom: 48px;
+  width: 100%;
+  max-width: 560px;
+}
+
+.p4-wa-icon {
+  width: 72px;
+  height: 72px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  box-shadow: 0 0 36px rgba(37,211,102,0.4);
+}
+
+.p4-wa-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.p4-wa-label {
+  font-size: 0.95rem;
+  color: #4a6a8a;
+}
+
+.p4-free {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.p4-handle {
+  font-size: 1rem;
+  color: #0A84FF;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* ─────────────────────────────
+   POST 5 — MOBILE / APP
+───────────────────────────── */
+.post-5 {
+  background: #050505;
+}
+
+.p5-left-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 6px;
+  background: linear-gradient(180deg, transparent, #0A84FF, transparent);
+}
+
+.p5-glow {
+  position: absolute;
+  top: -150px;
+  right: -150px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(10,132,255,0.16) 0%, transparent 60%);
+}
+
+.p5-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 90px 90px 90px 100px;
+}
+
+.p5-service-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 24px;
+  background: rgba(10,132,255,0.1);
+  border: 1px solid rgba(10,132,255,0.35);
+  border-radius: 50px;
+  margin-bottom: 44px;
+  width: fit-content;
+}
+
+.p5-service-chip i {
+  color: #0A84FF;
+  font-size: 1rem;
+}
+
+.p5-service-chip span {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #0A84FF;
+}
+
+.p5-headline {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 32px;
+  letter-spacing: -1px;
+}
+
+.p5-headline span {
+  background: linear-gradient(135deg, #0A84FF, #66c2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.p5-desc {
+  font-size: 1.2rem;
+  color: #6a8aaa;
+  line-height: 1.7;
+  max-width: 560px;
+  margin-bottom: 52px;
+}
+
+.p5-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 64px;
+  padding: 0;
+}
+
+.p5-features li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 1.1rem;
+  color: #c0d0e0;
+  font-weight: 500;
+}
+
+.p5-features li i {
+  color: #0A84FF;
+  width: 20px;
+  text-align: center;
+}
+
+.p5-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.p5-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.p5-logo-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #0A84FF, #0040aa);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 1.3rem;
+  color: white;
+  box-shadow: 0 0 20px rgba(10,132,255,0.4);
+}
+
+.p5-logo-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+}
+
+.p5-logo-text .blue { color: #0A84FF; }
+
+.p5-handle {
+  font-size: 0.95rem;
+  color: #0A84FF;
+  font-weight: 600;
+  letter-spacing: 1px;
+}

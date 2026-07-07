@@ -1,0 +1,77 @@
+@if (project) {
+  <section class="page-hero">
+    <div class="container hero-inner">
+      <span class="section-kicker">// projeto</span>
+      <h1 style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+        {{ project.title }}
+        <span class="project-badge-inline" style="font-size: 0.75rem; background: var(--gradient); color: #fff; padding: 0.25rem 0.65rem; border-radius: 999px; font-weight: 700; letter-spacing: 0.05em; vertical-align: middle;">
+          {{ project.badge }}
+        </span>
+      </h1>
+      <p class="lead">{{ project.subtitle }}</p>
+    </div>
+  </section>
+
+  @if (project.images && project.images.length > 0) {
+    <section class="section container" style="padding-top: 0;">
+      <div class="project-images-grid" style="display: flex; flex-direction: column; gap: 1.2rem;">
+        <div class="project-main-image" style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 1rem; max-height: 480px;">
+          <img [src]="activeImage" [alt]="project.title" style="max-width: 100%; max-height: 440px; border-radius: 8px; object-fit: contain;" />
+        </div>
+        @if (project.images.length > 1) {
+          <div class="project-thumbnails" style="display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap;">
+            @for (img of project.images; track img) {
+              <img [src]="img" alt="Thumbnail" class="thumb" [class.active]="activeImage === img" (click)="setImage(img)" style="width: 80px; height: 50px; object-fit: cover; border-radius: 6px; border: 2px solid transparent; cursor: pointer; transition: border-color 0.2s;" />
+            }
+          </div>
+        }
+      </div>
+    </section>
+  }
+
+  <section class="section container" style="padding-top: 0;">
+    <h2 style="font-size: 1.5rem; margin-bottom: 1.2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">Sobre o Projeto</h2>
+    
+    <div class="project-content-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+      <div class="project-text" style="display: flex; flex-direction: column; justify-content: center;">
+        <p style="color: var(--text-muted); line-height: 1.7; font-size: 1rem;">
+          {{ project.about }}
+        </p>
+      </div>
+      
+      <div class="project-features" style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem;">
+        <h3 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--text);">Funcionalidades</h3>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem;">
+          @for (feature of project.features; track feature) {
+            <li style="font-size: 0.92rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.6rem;">
+              <i class="fas fa-check" style="color: var(--accent); font-size: 0.8rem;"></i>
+              {{ feature }}
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container" style="padding-top: 0;">
+    <h2 style="font-size: 1.5rem; margin-bottom: 1.2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">Tecnologias</h2>
+    <ul class="chips" style="gap: 0.6rem;">
+      @for (tag of project.tags; track tag) {
+        <li class="chip" style="font-size: 0.9rem; padding: 0.4rem 0.9rem;">{{ tag }}</li>
+      }
+    </ul>
+  </section>
+
+  <section class="section container" style="padding-top: 0; padding-bottom: 4rem;">
+    <div class="contact-card" style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; justify-content: center;">
+      <h2>Gostou?</h2>
+      <p class="lead" style="max-width: 50ch; margin-bottom: 0;">Vamos criar algo incrível juntos.</p>
+      <div class="cta-group" style="justify-content: center;">
+        <a href="https://wa.me/5567998640639?text=Olá!%20Vi%20o%20projeto%20{{ project.title }}%20e%20gostaria%20de%20um%20orçamento." target="_blank" rel="noopener" class="btn primary">
+          <i class="fab fa-whatsapp" style="margin-right: 0.5rem;"></i> Falar Comigo
+        </a>
+        <a [routerLink]="['/']" fragment="contato" class="btn ghost">Mais Contatos</a>
+      </div>
+    </div>
+  </section>
+}

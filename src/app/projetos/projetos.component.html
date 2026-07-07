@@ -1,0 +1,39 @@
+<section class="page-hero">
+  <div class="container hero-inner">
+    <span class="section-kicker">// portfólio</span>
+    <h1>Cases <span class="gradient-text">Recentes</span></h1>
+    <p class="lead">Soluções digitais completas que entregam resultados reais.</p>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="cards projects">
+    @for (project of projects; track project.title) {
+      <article class="card project" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+        <div>
+          <span class="project-badge-tag" style="font-size: 0.72rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.6rem;">{{ project.badge }}</span>
+          <h3 style="margin-bottom: 0.8rem;">{{ project.title }}</h3>
+          <p style="margin-bottom: 1.2rem;">{{ project.description }}</p>
+          <ul class="chips" style="margin-bottom: 1.4rem;">
+            @for (tag of project.tags; track tag) {
+              <li class="chip small">{{ tag }}</li>
+            }
+          </ul>
+        </div>
+        <a [routerLink]="[project.link]" class="project-link" style="color: var(--accent); text-decoration: none; font-size: 0.95rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; cursor: pointer;">
+          Ver detalhes <i class="fas fa-arrow-right" style="font-size: 0.8rem;"></i>
+        </a>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="section container" style="padding-top: 0;">
+  <div class="contact-card" style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; justify-content: center;">
+    <h2>Quer um projeto assim?</h2>
+    <p class="lead" style="max-width: 50ch; margin-bottom: 0;">Vamos criar algo incrível juntos. Sem enrolação.</p>
+    <a href="https://wa.me/5567998640639?text=Olá!%20Vi%20os%20projetos%20e%20gostaria%20de%20um%20orçamento." target="_blank" rel="noopener" class="btn primary">
+      <i class="fab fa-whatsapp" style="margin-right: 0.5rem;"></i> Falar no WhatsApp
+    </a>
+  </div>
+</section>
